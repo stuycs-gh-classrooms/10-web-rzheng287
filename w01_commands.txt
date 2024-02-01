@@ -1,0 +1,62 @@
+rzheng60@cslab1-7:~$ mkdr marvel
+Command 'mkdr' not found, did you mean:
+  command 'mhdr' from deb mblaze (1.1-1)
+  command 'mkdir' from deb coreutils (8.32-4.1ubuntu1)
+Try: apt install <deb name>
+rzheng60@cslab1-7:~$ mkdir marvel
+rzheng60@cslab1-7:~$ tree marvel/
+marvel/
+
+0 directories, 0 files
+rzheng60@cslab1-7:~$ cd marvel
+rzheng60@cslab1-7:~/marvel$ mkdir heroes
+rzheng60@cslab1-7:~/marvel$ tree marvel
+marvel  [error opening dir]
+
+0 directories, 0 files
+rzheng60@cslab1-7:~/marvel$ mkdir heroes
+mkdir: cannot create directory ‘heroes’: File exists
+rzheng60@cslab1-7:~/marvel$ ls
+heroes
+rzheng60@cslab1-7:~/marvel$ mkdir villians
+rzheng60@cslab1-7:~/marvel$ cd heroes
+rzheng60@cslab1-7:~/marvel/heroes$ mkdir avengers
+rzheng60@cslab1-7:~/marvel/heroes$ cd avengers
+rzheng60@cslab1-7:~/marvel/heroes/avengers$ touch black_widow.txt
+rzheng60@cslab1-7:~/marvel/heroes/avengers$ touch hulk.txt
+rzheng60@cslab1-7:~/marvel/heroes/avengers$ ls
+black_widow.txt  hulk.txt
+rzheng60@cslab1-7:~/marvel/heroes/avengers$ cd ..
+rzheng60@cslab1-7:~/marvel/heroes$ mkdir xmen
+rzheng60@cslab1-7:~/marvel/heroes$ cd xmen
+rzheng60@cslab1-7:~/marvel/heroes/xmen$ touch storm.txt
+rzheng60@cslab1-7:~/marvel/heroes/xmen$ touch wolverine.txt
+rzheng60@cslab1-7:~/marvel/heroes/xmen$ cd ..
+rzheng60@cslab1-7:~/marvel/heroes$ cd ..
+rzheng60@cslab1-7:~/marvel$ cd villians
+rzheng60@cslab1-7:~/marvel/villians$ touch thanos.txt
+rzheng60@cslab1-7:~/marvel/villians$ mkdir hydra
+rzheng60@cslab1-7:~/marvel/villians$ cd hydra
+rzheng60@cslab1-7:~/marvel/villians/hydra$ touch red_skull.txt
+rzheng60@cslab1-7:~/marvel/villians/hydra$ cd ..
+rzheng60@cslab1-7:~/marvel/villians$ cd..
+cd..: command not found
+rzheng60@cslab1-7:~/marvel/villians$ cd ..
+rzheng60@cslab1-7:~/marvel$ tree marvel
+marvel  [error opening dir]
+
+0 directories, 0 files
+rzheng60@cslab1-7:~/marvel$ cd ..
+rzheng60@cslab1-7:~$ tree marvel
+marvel
+├── heroes
+│   ├── avengers
+│   │   ├── black_widow.txt
+│   │   └── hulk.txt
+│   └── xmen
+│       ├── storm.txt
+│       └── wolverine.txt
+└── villians
+    ├── hydra
+    │   └── red_skull.txt
+    └── thanos.txt
