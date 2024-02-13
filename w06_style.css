@@ -1,22 +1,23 @@
 h1 {
   color: green;
-  text-allign: center
-  font-weight: bold
+  text-allign: center;
+  font-weight: bold;
+}
+
+body {
+  background-color: beige;
+  width: 90%px;
+  height: 95%px;
 }
 
 p {
-  background=color:beige;
-  width: 90%px
-  height: 95%px
-}
-
-p {
-  font-family: "Times"
-  border: 10px solid black
+  font-family: "Times";
+  border: 10px solid black;
 }
 
 p,
 a,
 li{
-  font-size: 30px
+  font-size: 30px;
+  color: peru;
 }
