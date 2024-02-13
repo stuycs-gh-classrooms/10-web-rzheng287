@@ -1,1 +1,22 @@
+h1 {
+  color: green;
+  text-allign: center
+  font-weight: bold
+}
 
+body {
+  background=color:lightsteelblue;
+  width: 90%px
+  height: 95%px
+}
+
+p {
+  font-family: "Times"
+  border: 10px solid black
+}
+
+p,
+a,
+li{
+  font-size: 30px
+}
