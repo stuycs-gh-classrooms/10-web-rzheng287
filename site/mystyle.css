@@ -3,6 +3,9 @@ body {
 
 }
 
+.page{
+  display: flex;
+}
 p,
 pagehere{
   background-color: brown;
