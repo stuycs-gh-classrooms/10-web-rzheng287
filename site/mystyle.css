@@ -3,7 +3,8 @@ body {
 
 }
 
-.page{
+.page,
+.pagehere{
   display: flex;
 }
 p,
