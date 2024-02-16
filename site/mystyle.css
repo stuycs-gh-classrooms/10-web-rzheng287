@@ -10,3 +10,7 @@ p,
 pagehere{
   background-color: brown;
 }
+
+a{
+  display:none;
+}
