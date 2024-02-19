@@ -9,10 +9,11 @@ body {
 h1{
   text-align:center
 }
-
-.nav{
-  display:box;
+.placeholder{
+  color: burlywood;
 }
+
+
 .page{
   background-color: burlywood;
 }
@@ -22,8 +23,8 @@ background-color: beige;
 
 
 a{
-  padding-left: 150px;
-  padding-right: 150px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 h1,
 ul,
@@ -37,10 +38,11 @@ p
 }
 
 a{
+  display: flex-box;
   text-decoration: none;
   color:black;
 }
 
 .block{
-  display:block;
+  display:flex-block;
 }
