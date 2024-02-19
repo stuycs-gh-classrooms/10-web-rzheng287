@@ -1,19 +1,46 @@
 body {
+  background-color: burlywood;
+  font-size: 32px;
+  margin-top: 200px;
+  margin-right: 200px;
+  margin-left: 200px;
+}
+
+h1{
+  text-align:center
+}
+
+.nav{
+  display:box;
+}
+.page{
+  background-color: burlywood;
+}
+.pagehere{
+background-color: beige;
+}
+
+
+a{
+  padding-left: 150px;
+  padding-right: 150px;
+}
+h1,
+ul,
+p
+{
   background-color: beige;
-  width: 80%px;
-  height: 80%px;
-
-}
-
-.page,{
-  display: flex;
-  background-color: brown;
-}
-p,
-pagehere{
-  background-color: brown;
+  width:50%px;
+  height:100%px;
+  margin:auto;
+  font-family: cursive;
 }
 
 a{
   text-decoration: none;
+  color:black;
+}
+
+.block{
+  display:block;
 }
