@@ -4,6 +4,7 @@ body {
   margin-top: 200px;
   margin-right: 200px;
   margin-left: 200px;
+  margin-bottom: 200px;
 }
 
 h1{
@@ -50,4 +51,6 @@ a{
 
 img{
   float:right;
+  max-width: 20%;
+  max-height:10%;
 }
