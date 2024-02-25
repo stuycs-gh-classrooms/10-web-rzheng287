@@ -35,6 +35,7 @@ p
   height:100%px;
   margin:auto;
   font-family: cursive;
+  color:black;
 }
 
 a{
@@ -45,4 +46,8 @@ a{
 
 .block{
   display:flex-block;
+}
+
+img{
+  float:right;
 }
