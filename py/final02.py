@@ -33,6 +33,11 @@ def add_link(s,url,text):
     new += add_text
     return new
 
+html = HTML_head
+html += add_link(HTML_link,'hello','testing')
+html += HTML_foot
+print(html)
+
 
 
 
