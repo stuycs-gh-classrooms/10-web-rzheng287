@@ -1,6 +1,7 @@
 #!/usr/bin/python
 print('Content-type: text/html\n')
 
+
 HTML_head = """
 <!DOCTYPE html>
 <html lang="en">
@@ -33,12 +34,27 @@ def add_link(s,url,text):
     new += add_text
     return new
 
+if __name__ == "__main__":
+  while True:
+    print("YOU HAVE ENTERTED THE DUNGEON!")
+    print("What is your name travler?: ")
+    name = input()
+    print("Hello, " + name + "will you take on this quest to save your life?")
+    anwser = input()
+    if (awnser.lower() == 'yes'):
+       print ("Great, now scram!")
+    else:
+        print("Wrong anwser, GO")
+    start()
+
+def start():
+    movement = ['go left','go straight','go right','go back']
+
+
 html = HTML_head
-html += add_link(HTML_link,'hello','testing')
+html += add_link(HTML_link,'homer.stuy.edu/~rzheng60/py/index.html','Index Page')
 html += HTML_foot
 print(html)
-
-
 
 
 
