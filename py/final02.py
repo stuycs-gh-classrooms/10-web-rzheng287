@@ -54,8 +54,7 @@ html+= '<body style="background-color: '
 html+= bgcolor + ';">'
 html+= '<h1>Welcome ' + name + '</h1>'
 html+= '<br><a href="index.html">Thats not your name?</a>'
-html+= '<p> As the voice disappers you look around and you see an intersection. Which way would you like to go?</p>'
-html+= add_link(HTML_link,'http://homer.stuy.edu/~rzheng60/py/final02.html','Foward into the darkness')
+html+= add_link(HTML_link,'http://homer.stuy.edu/~rzheng60/py/final02.html','Start the quest')
 html+= HTML_foot
 print(html)
 
