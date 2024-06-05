@@ -44,12 +44,16 @@ data = cgi.FieldStorage()
 name = 'Goober'
 if ('name' in data):
     name = data['name'].value
-
+bgcolor = 'DarkSeaGreen'
+if ('bgcolor' in data):
+    bgcolor = data['bgcolor'].value
     
 
 html = HTML_head
+html+= '<body style="background-color: '
+html+= bgcolor + ';">'
 html+= '<h1>Welcome ' + name + '</h1>'
-html+= '<br><a href="index.html">Change your name?</a>'
+html+= '<br><a href="index.html">Thats not your name?</a>'
 html+= HTML_foot
 print(html)
 
