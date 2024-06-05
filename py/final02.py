@@ -14,7 +14,7 @@ HTML_head = """
 <head>
 <link href="final02.css" rel="stylesheet">
 <meta charset="utf-8">
-<title>Hello</title>
+<title>Dungeon Demise</title>
 </head>
 """
 
@@ -49,12 +49,10 @@ if ('bgcolor' in data):
     bgcolor = data['bgcolor'].value
     
 
-
-
-html= HTML_head
+html = HTML_head
 html+= '<body style="background-color: '
 html+= bgcolor + ';">'
-html+= '<h1>Hello ' + name + '</h1>'
+html+= '<h1>Welcome ' + name + '</h1>'
 html+= '<br><a href="index.html">Change your name?</a>'
 html+= HTML_foot
 print(html)
