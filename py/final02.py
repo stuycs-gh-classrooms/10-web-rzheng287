@@ -44,7 +44,7 @@ data = cgi.FieldStorage()
 name = 'Goober'
 if ('name' in data):
     name = data['name'].value
-bgcolor = 'Blue'
+bgcolor = 'DarkSeaGreen'
 if ('bgcolor' in data):
     bgcolor = data['bgcolor'].value
     
