@@ -1,6 +1,8 @@
 #!/usr/bin/python
 print('Content-type: text/html\n')
 
+import cgitb 
+cgitb.enable()
 
 HTML_head = """
 <!DOCTYPE html>
@@ -45,7 +47,7 @@ if __name__ == "__main__":
        print ("Great, now scram!")
     else:
         print("Wrong anwser, GO")
-    start()
+#     start()
 
 data = cgi.FieldStorage()
 name = 'Goober'
@@ -63,7 +65,6 @@ html= HTML_head
 html+= '<body style="background-color: '
 html+= bgcolor + ';">'
 html+= '<h1>Hello ' + name + '</h1>'
-html+= '<br><a href="hello.html">Try Again</a>'
 html+= HTML_foot
 print(html)
 
