@@ -48,7 +48,6 @@ if ('name' in data):
     
 
 html = HTML_head
-html+= bgcolor + ';">'
 html+= '<h1>Welcome ' + name + '</h1>'
 html+= '<br><a href="index.html">Thats not your name?</a>'
 html+= add_link(HTML_link,'http://homer.stuy.edu/~rzheng60/py/start.html','Start the quest')
