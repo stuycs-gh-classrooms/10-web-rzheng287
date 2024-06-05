@@ -1,7 +1,7 @@
 #!/usr/bin/python
 print('Content-type: text/html\n')
 
-import cgitb #
+import cgitb 
 cgitb.enable()
 
 import cgi
@@ -54,6 +54,8 @@ html+= '<body style="background-color: '
 html+= bgcolor + ';">'
 html+= '<h1>Welcome ' + name + '</h1>'
 html+= '<br><a href="index.html">Thats not your name?</a>'
+html+= '<p> As the voice disappers you look around and you see an intersection</p>'
+html+= add_link(HTML_link,'http://homer.stuy.edu/~rzheng60/py/final02.html','')
 html+= HTML_foot
 print(html)
 
