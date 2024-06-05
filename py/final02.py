@@ -4,6 +4,8 @@ print('Content-type: text/html\n')
 import cgitb 
 cgitb.enable()
 
+import cgi
+
 HTML_head = """
 <!DOCTYPE html>
 <html lang="en">
@@ -36,18 +38,7 @@ def add_link(s,url,text):
     new += add_text
     return new
 
-if __name__ == "__main__":
-  while True:
-    print("YOU HAVE ENTERTED THE DUNGEON!")
-    print("What is your name travler?: ")
-    name = input()
-    print("Hello, " + name + " will you take on this quest to save your life?")
-    anwser = input()
-    if (anwser.lower() == 'yes'):
-       print ("Great, now scram!")
-    else:
-        print("Wrong anwser, GO")
-#     start()
+
 
 data = cgi.FieldStorage()
 name = 'Goober'
@@ -57,14 +48,14 @@ bgcolor = 'Blue'
 if ('bgcolor' in data):
     bgcolor = data['bgcolor'].value
     
-#def start():
-    #movement = ['go left','go straight','go right','go back']
+
 
 
 html= HTML_head
 html+= '<body style="background-color: '
 html+= bgcolor + ';">'
 html+= '<h1>Hello ' + name + '</h1>'
+html+= '<br><a href="index.html">Change your name?</a>'
 html+= HTML_foot
 print(html)
 
