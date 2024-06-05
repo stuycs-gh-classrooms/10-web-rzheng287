@@ -39,21 +39,32 @@ if __name__ == "__main__":
     print("YOU HAVE ENTERTED THE DUNGEON!")
     print("What is your name travler?: ")
     name = input()
-    print("Hello, " + name + "will you take on this quest to save your life?")
+    print("Hello, " + name + " will you take on this quest to save your life?")
     anwser = input()
-    if (awnser.lower() == 'yes'):
+    if (anwser.lower() == 'yes'):
        print ("Great, now scram!")
     else:
         print("Wrong anwser, GO")
     start()
 
-def start():
-    movement = ['go left','go straight','go right','go back']
+data = cgi.FieldStorage()
+name = 'Goober'
+if ('name' in data):
+    name = data['name'].value
+bgcolor = 'Blue'
+if ('bgcolor' in data):
+    bgcolor = data['bgcolor'].value
+    
+#def start():
+    #movement = ['go left','go straight','go right','go back']
 
 
-html = HTML_head
-html += add_link(HTML_link,'homer.stuy.edu/~rzheng60/py/index.html','Index Page')
-html += HTML_foot
+html= HTML_head
+html+= '<body style="background-color: '
+html+= bgcolor + ';">'
+html+= '<h1>Hello ' + name + '</h1>'
+html+= '<br><a href="hello.html">Try Again</a>'
+html+= HTML_foot
 print(html)
 
 
