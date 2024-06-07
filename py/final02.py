@@ -151,7 +151,7 @@ html += '<body>'
 html += '<h1> Dungeon Demise</h1>'
 html += f'<p>{description}</p>'
 html += '''<form method="post" action="final02.py">
-<input type="hidden" name="paths" value="{Now}">
+<input type="hidden" name="path" value="{Now}">
 '''
 html+= gen_rad(paths)
 html += '<input type="submit" value="Submit">'
