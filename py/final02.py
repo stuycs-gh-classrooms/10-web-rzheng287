@@ -136,25 +136,29 @@ def path_gen(path=None):
         possiblePaths['Now'] = path
     else:
         possiblePaths['Now'] = 'Begin'
-    print("Now:", possiblePaths["Now"])
-    print("Paths:", possiblePaths["paths"])
+    return possiblePaths['Now'], possiblePaths['paths'][possiblePaths['Now']]['description'], possiblePaths['paths'][possiblePaths['Now']]['options']
    
 
 
 
-
-    html=HTML_head
-    html += '<body>'
-    html += '<h1> Dungeon Demise</h1>'
-    html += f'<p>{possiblePaths["paths"][possiblePaths["Now"]]["description"]}</p>'
-    html += '<form method="post" action="">'
-    html += gen_rad(possiblePaths['paths'][possiblePaths['Now']]['options'])
-    html += '<input type="submit" value="Submit">'
-    html += '</form>'
-    html += HTML_foot
-    print(html)
 form = cgi.FieldStorage()
 path = form.getvalue('path')
+Now, description, paths = path_gen(path)
+
+html=HTML_head
+html += '<body>'
+html += '<h1> Dungeon Demise</h1>'
+html += '<p>{"description"}</p>'
+html += '''<form method="post" action="final02.py">
+<input type="hidden" name="path" value="{Now}">
+'''
+for e,i in paths:
+    html+= f'input type="radio" name="path" value="{e}"> {i}<br>'
+html += '<input type="submit" value="Submit">'
+html += '</form>'
+html += HTML_foot
+print(html)
+
 path_gen()
 
 
