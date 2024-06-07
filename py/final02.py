@@ -51,32 +51,32 @@ def path_gen(path=None):
             'Begin': {
                 'description': 'You wake up in a dark room. As your eyes slowly acustom to the dark, you notice 3 paths. Which one will you go towards?',
                 'options': [
-                    ('Go left', 'left'),
-                    ('Go straight', 'straight'),
-                    ('Go right', 'right')
+                    ('left', 'Go left'),
+                    ('straight', 'Go straight'),
+                    ('right', 'Go right')
                 ]
             },
             'left': {
                 'description': 'You decide to walk on the left path, suddenly a giant boulder breaks lose and starts rolling towards you! What will you do?',
                 'options': [
-                    ('Run for it', 'Run'),
-                    ('Press yourself against the wall', 'Wall'),
-                    ('Run back to the start', 'Back')]
+                    ('Run', 'Run for it'),
+                    ('Wall', 'Press yourself against the wall'),
+                    ('Back', 'Run back to the start')]
                 
             },
             'straight': {
                 'description': 'You decide to walk on the straight path, you walk and walk until you see giant trees looming over you. What will you do?',
                 'options': [
-                    ('Walk into the forest', 'In'),
-                    ('Walk around its perimeter', 'Around'),
-                    ('Climb a tree', 'Tree')]
+                    ('In', 'Walk into the forest'),
+                    ('Around', 'Walk around its perimeter'),
+                    ('Tree', 'Climb a tree')]
             },
             'right': {
                 'description': 'You decide to walk on the right path. As you walk you hear many sounds coming from a small opening. What will you do?',
                 'options': [
-                    ('Keep walking', 'Walk'),
-                    ('Explore the hole', 'Hole'),
-                    ('Yell Back', 'Yell')]
+                    ('Walk', 'Keep walking'),
+                    ('Hole', 'Explore the hole'),
+                    ('Yell', 'Yell Back')]
            },
             'Run': {
                 'description': 'You decide to try and out run the rolling boulder. However it is much faster than you and crushes you.',
