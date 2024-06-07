@@ -77,51 +77,51 @@ def path_gen(path=None):
            },
             'Run': {
                 'description': 'You decide to try and out run the rolling boulder. However it is much faster than you and crushes you.',
-                'options': [
+                'options': [('Begin', 'Restart')
                     
                     ]
            },
             'Wall': {
                 'description': 'You decide to press yourself along the wall and just manage to dodge the rolling boulder. You then run to the end and exit the dungeon. ',
-                'options': [
+                'options': [('Begin', 'Restart')
                     ]
            },
             'Back': {
                 'description': 'You decide to run back to the dark room before the boulder reaches you. ',
-                'options': [
+                'options': [('Begin', 'Restart')
                     ]
            },
         
             'In': {
                 'description': 'You decide to walk into the forest when suddenly, a large monster appears. You try to run but it grabs you and eats you.',
-                'options': [
+                'options': [('Begin', 'Restart')
                     ]
             },
             
             'Around': {
                 'description': 'You decide to walk around the trees and discover a ladder to the exit. You excape the dungeon. ',
-                'options': [
+                'options': [('Begin', 'Restart')
                     ]
             },
             
             'Tree': {
                 'description': 'You decide to climb one of the largre trees, but a sudden gust of wind knocks you down and you die. ',
-                'options': [
+                'options': [('Begin', 'Restart')
                     ]
            },
             'Walk': {
-                'description': 'You decide to ignore the sounds coming out of the hole, and find an exit at the very end. You excape the dungeon. ',
-                'options': [
+                'description': 'You decide to ignore the sounds coming out of the hole, and find an exit at the very end. You escape the dungeon. ',
+                'options': [('Begin', 'Restart')
                     ]
            },
             'Hole': {
-                'description': 'You decide to crawl into the hole and explore. However, venomous snakes bit at your head and you die.',
-                'options': [
+                'description': 'You decide to crawl into the hole and explore. However, venomous snakes bite at your head and you die.',
+                'options': [('Begin', 'Restart')
                     ]
            },
             'Yell': {
-                'description': 'You decide to yell into the hole. However, you are met with a deep growl. Scared out of your mind you run and find an exit. You excape the dungeon.',
-                'options': [('Begin', 'Try')
+                'description': 'You decide to yell into the hole. However, you are met with a deep growl. Scared out of your mind you run and find an exit. You escape the dungeon.',
+                'options': [('Begin', 'Restart')
                     ]
            }
            
