@@ -45,9 +45,6 @@ def gen_rad(x):
 
 def path_gen(path=None):
     possiblePaths = {
-        'Now': 'Begin',
-        'voice': 'Welcome traveller, I see you have found yourself into the dungeon.The only way to leave is to find an exit. Well of course I cannot let you see where we started. NIGHT NIGHT, GOOD LUCK!',
-        'paths': {
             'Begin': {
                 'description': 'You wake up in a dark room. As your eyes slowly acustom to the dark, you notice 3 paths. Which one will you go towards?',
                 'options': [
@@ -124,19 +121,18 @@ def path_gen(path=None):
            },
             'Yell': {
                 'description': 'You decide to yell into the hole. However, you are met with a deep growl. Scared out of your mind you run and find an exit. You excape the dungeon.',
-                'options': [
+                'options': [('Begin', 'Try')
                     ]
            }
            
            }
-    }
     
 
-    if path and path in [option[1] for option in possiblePaths['paths'].get(possiblePaths['Now'], {}).get('options', [])]:
-        possiblePaths['Now'] = path
+    if path and path in possiblePaths:
+        current = path
     else:
-        possiblePaths['Now'] = 'Begin'
-    return possiblePaths['Now'], possiblePaths['paths'][possiblePaths['Now']]['description'], possiblePaths['paths'][possiblePaths['Now']]['options']
+        current = 'Begin'
+    return current, possiblePaths[current]['description'], possiblePaths[current]['options']
    
 
 
@@ -146,8 +142,8 @@ path = form.getvalue('path')
 Now, description, paths = path_gen(path)
 
 html=HTML_head
-html += '<body>'
-html += '<h1> Dungeon Demise</h1>'
+html += f'<body>'
+html += f'<h1> Dungeon Demise</h1>'
 html += f'<p>{description}</p>'
 html += f'''<form method="post" action="final02.py">
 <input type="hidden" name="Now" value="{Now}">
