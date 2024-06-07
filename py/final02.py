@@ -37,22 +37,125 @@ def add_link(s,url,text):
     add_text = link.replace('temp_text',text)
     new += add_text
     return new
+def gen_rad(x):
+    radio = ''
+    for e,i in x:
+        radio += f'input type="radio" name="path" value="{e}"> {i}<br>'
+    return radio
 
-
-
-data = cgi.FieldStorage()
-name = 'Goober'
-if ('name' in data):
-    name = data['name'].value
-
+def path_gen(path=None):
+    possiblePaths = {
+        'Now': 'Begin',
+        'voice': 'Welcome traveller, I see you have found yourself into the dungeon.The only way to leave is to find an exit. Well of course I cannot let you see where we started. NIGHT NIGHT, GOOD LUCK!',
+        'paths': {
+            'Begin': {
+                'description': 'You wake up in a dark room. As your eyes slowly acustom to the dark, you notice 3 paths. Which one will you go towards?',
+                'options': [
+                    ('Go left', 'left'),
+                    ('Go straight', 'straight'),
+                    ('Go right', 'right')
+                ]
+            },
+            'left': {
+                'description': 'You decide to walk on the left path, suddenly a giant boulder breaks lose and starts rolling towards you! What will you do?',
+                'options': [
+                    ('Run for it', 'Run'),
+                    ('Press yourself against the wall', 'Wall'),
+                    ('Run back to the start', 'Back')]
+                
+            },
+            'straight': {
+                'description': 'You decide to walk on the straight path, you walk and walk until you see giant trees looming over you. What will you do?',
+                'options': [
+                    ('Walk into the forest', 'In'),
+                    ('Walk around its perimeter', 'Around'),
+                    ('Climb a tree', 'Tree')]
+            },
+            'right': {
+                'description': 'You decide to walk on the right path. As you walk you hear many sounds coming from a small opening. What will you do?',
+                'options': [
+                    ('Keep walking', 'Walk'),
+                    ('Explore the hole', 'Hole'),
+                    ('Yell Back', 'Yell')]
+           },
+            'Run': {
+                'description': 'You decide to try and out run the rolling boulder. However it is much faster than you and crushes you.',
+                'options': [
+                    ('Try again?','Begin')
+                    ]
+           },
+            'Wall': {
+                'description': 'You decide to press yourself along the wall and just manage to dodge the rolling boulder. You then run to the end and exit the dungeon. ',
+                'options': [('Try again?','Begin')
+                    ]
+           },
+            'Back': {
+                'description': 'You decide to run back to the dark room before the boulder reaches you. ',
+                'options': [('Try again?','Begin')
+                    ]
+           },
+        
+            'In': {
+                'description': 'You decide to walk into the forest when suddenly, a large monster appears. You try to run but it grabs you and eats you.',
+                'options': [('Try again?','Begin')
+                    ]
+            },
+            
+            'Around': {
+                'description': 'You decide to walk around the trees and discover a ladder to the exit. You excape the dungeon. ',
+                'options': [('Try again?','Begin')
+                    ]
+            },
+            
+            'Tree': {
+                'description': 'You decide to climb one of the largre trees, but a sudden gust of wind knocks you down and you die. ',
+                'options': [('Try again?','Begin')
+                    ]
+           },
+            'Walk': {
+                'description': 'You decide to ignore the sounds coming out of the hole, and find an exit at the very end. You excape the dungeon. ',
+                'options': [('Try again?','Begin')
+                    ]
+           },
+            'Hole': {
+                'description': 'You decide to crawl into the hole and explore. However, venomous snakes bit at your head and you die.',
+                'options': [('Try again?','Begin')
+                    ]
+           },
+            'Yell': {
+                'description': 'You decide to yell into the hole. However, you are met with a deep growl. Scared out of your mind you run and find an exit. You excape the dungeon.',
+                'options': [('Try again?','Begin')
+                    ]
+           }
+           
+           }
+    }
     
 
-html = HTML_head
-html+= '<h1>Welcome ' + name + '</h1>'
-html+= '<br><a href="index.html">Thats not your name?</a>'
-html+= add_link(HTML_link,'http://homer.stuy.edu/~rzheng60/py/start.html','Start the quest')
-html+= HTML_foot
-print(html)
+    if path and path in [option[1] for option in possiblePaths['paths'].get(possiblePaths['Now'], {}).get('options', [])]:
+        possiblePaths['Now'] = path
+    else:
+        possiblePaths['Now'] = 'Begin'
+    print("Now:", possiblePaths["Now"])
+    print("Paths:", possiblePaths["paths"])
+   
+
+
+
+
+    html=HTML_head
+    html += '<body>'
+    html += '<h1> Dungeon Demise</h1>'
+    html += f'<p>{possiblePaths["paths"][possiblePaths["Now"]]["description"]}</p>'
+    html += '<form method="post" action="">'
+    html += gen_rad(possiblePaths['paths'][possiblePaths['Now']]['options'])
+    html += '<input type="submit" value="Submit">'
+    html += '</form>'
+    html += HTML_foot
+    print(html)
+form = cgi.FieldStorage()
+path = form.getvalue('path')
+path_gen()
 
 
 
