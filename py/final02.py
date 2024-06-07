@@ -132,7 +132,7 @@ def path_gen(path=None):
     }
     
 
-    if path and path in [option[1] for option in possiblePaths['paths'].get(possiblePaths['Now'], {}).get('options', [])]:
+    if path and path in  possiblePaths['paths']:
         possiblePaths['Now'] = path
     else:
         possiblePaths['Now'] = 'Begin'
