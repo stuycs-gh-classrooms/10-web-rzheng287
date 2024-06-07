@@ -132,10 +132,11 @@ def path_gen(path=None):
     }
     
 
-    if path and path in [option[1] for option in possiblePaths['paths'].get(possiblePaths['Now'], {}).get('options', [])]:
+    if path and path in [option[0] for option in possiblePaths['paths'].get(possiblePaths['Now'], {}).get('options', [])]:
         possiblePaths['Now'] = path
     else:
         possiblePaths['Now'] = 'Begin'
+    
     return possiblePaths['Now'], possiblePaths['paths'][possiblePaths['Now']]['description'], possiblePaths['paths'][possiblePaths['Now']]['options']
    
 
@@ -148,12 +149,11 @@ Now, description, paths = path_gen(path)
 html=HTML_head
 html += '<body>'
 html += '<h1> Dungeon Demise</h1>'
-html += '''<p>"{}"</p>'''
+html += f'<p>{description}</p>'
 html += '''<form method="post" action="final02.py">
 <input type="hidden" name="path" value="{Now}">
 '''
-for e,i in paths:
-    html+= f'<input type="radio" name="path" value="{e}"> {i}<br>'
+html+= gen_rad(paths)
 html += '<input type="submit" value="Submit">'
 html += '</form>'
 html += HTML_foot
