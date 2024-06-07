@@ -56,75 +56,75 @@ def path_gen(path=None):
                     ('Go right', 'right')
                 ]
             },
-            'Go left': {
+            'left': {
                 'description': 'You decide to walk on the left path, suddenly a giant boulder breaks lose and starts rolling towards you! What will you do?',
                 'options': [
-                    ('Run for it', 'Run'),
-                    ('Press yourself against the wall', 'Wall'),
-                    ('Run back to the start', 'Back')]
+                    ('Run', 'Run for it'),
+                    ('Wall', 'Press yourself against the wall'),
+                    ('Back', 'Run back to the start')]
                 
             },
-            'Go straight': {
+            'straight': {
                 'description': 'You decide to walk on the straight path, you walk and walk until you see giant trees looming over you. What will you do?',
                 'options': [
-                    ('Walk into the forest', 'In'),
-                    ('Walk around its perimeter', 'Around'),
-                    ('Climb a tree', 'Tree')]
+                    ('In', 'Walk into the forest'),
+                    ('Around', 'Walk around its perimeter'),
+                    ('Tree', 'Climb a tree')]
             },
-            'Go right': {
+            'right': {
                 'description': 'You decide to walk on the right path. As you walk you hear many sounds coming from a small opening. What will you do?',
                 'options': [
-                    ('Keep walking', 'Walk'),
-                    ('Explore the hole', 'Hole'),
-                    ('Yell Back', 'Yell')]
+                    ('Walk', 'Keep walking'),
+                    ('Hole', 'Explore the hole'),
+                    ('Yell ', 'Yell Back')]
            },
-            'Run for it': {
+            'Run': {
                 'description': 'You decide to try and out run the rolling boulder. However it is much faster than you and crushes you.',
                 'options': [
-                    ('Try again?','Begin')
+                    ('Begin','Try again?')
                     ]
            },
-            'Press yourself against the wall': {
+            'Wall': {
                 'description': 'You decide to press yourself along the wall and just manage to dodge the rolling boulder. You then run to the end and exit the dungeon. ',
-                'options': [('Try again?','Begin')
+                'options': [('Begin','Try again?')
                     ]
            },
-            'Run back to the start': {
+            'Back': {
                 'description': 'You decide to run back to the dark room before the boulder reaches you. ',
-                'options': [('Try again?','Begin')
+                'options': [('Begin','Try again?')
                     ]
            },
         
-            'Walk into the forest': {
+            'In': {
                 'description': 'You decide to walk into the forest when suddenly, a large monster appears. You try to run but it grabs you and eats you.',
-                'options': [('Try again?','Begin')
+                'options': [('Begin','Try again?')
                     ]
             },
             
-            'Walk around its perimeter': {
+            'Around': {
                 'description': 'You decide to walk around the trees and discover a ladder to the exit. You excape the dungeon. ',
-                'options': [('Try again?','Begin')
+                'options': [('Begin','Try again?')
                     ]
             },
             
-            'Climb a treet': {
+            'Tree': {
                 'description': 'You decide to climb one of the largre trees, but a sudden gust of wind knocks you down and you die. ',
-                'options': [('Try again?','Begin')
+                'options': [('Begin','Try again?')
                     ]
            },
-            'Keep walking': {
+            'Walk': {
                 'description': 'You decide to ignore the sounds coming out of the hole, and find an exit at the very end. You excape the dungeon. ',
-                'options': [('Try again?','Begin')
+                'options': [('Begin','Try again?')
                     ]
            },
-            'Explore the hole': {
+            'Hole': {
                 'description': 'You decide to crawl into the hole and explore. However, venomous snakes bit at your head and you die.',
-                'options': [('Try again?','Begin')
+                'options': [('Begin','Try again?')
                     ]
            },
-            'Yell back': {
+            'Yell': {
                 'description': 'You decide to yell into the hole. However, you are met with a deep growl. Scared out of your mind you run and find an exit. You excape the dungeon.',
-                'options': [('Try again?','Begin')
+                'options': [('Begin','Try again?')
                     ]
            }
            
@@ -151,7 +151,7 @@ html += '<body>'
 html += '<h1> Dungeon Demise</h1>'
 html += f'<p>{description}</p>'
 html += '''<form method="post" action="final02.py">
-<input type="hidden" name="path" value="{Now}">
+<input type="hidden" name="paths" value="{Now}">
 '''
 html+= gen_rad(paths)
 html += '<input type="submit" value="Submit">'
