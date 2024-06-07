@@ -148,12 +148,12 @@ Now, description, paths = path_gen(path)
 html=HTML_head
 html += '<body>'
 html += '<h1> Dungeon Demise</h1>'
-html += '<p>{"description"}</p>'
+html += '''<p>"{}"</p>'''
 html += '''<form method="post" action="final02.py">
 <input type="hidden" name="path" value="{Now}">
 '''
 for e,i in paths:
-    html+= f'input type="radio" name="path" value="{e}"> {i}<br>'
+    html+= f'<input type="radio" name="path" value="{e}"> {i}<br>'
 html += '<input type="submit" value="Submit">'
 html += '</form>'
 html += HTML_foot
