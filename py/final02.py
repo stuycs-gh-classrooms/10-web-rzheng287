@@ -152,7 +152,7 @@ html += f'<p>{description}</p>'
 html += f'''<form method="post" action="final02.py">
 <input type="hidden" name="Now" value="{Now}">
 '''
-html+= gen_rad(options)
+html+= gen_rad('options')
 html += '<input type="submit" value="Submit">'
 html += '</form>'
 html += HTML_foot
