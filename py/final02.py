@@ -40,7 +40,7 @@ def add_link(s,url,text):
 def gen_rad(x):
     radio = ''
     for e,i in x:
-        radio += f'input type="radio" name="path" value="{e}"> {i}<br>'
+        radio += f'<input type="radio" name="path" value="{e}"> {i}<br>'
     return radio
 
 def path_gen(path=None):
